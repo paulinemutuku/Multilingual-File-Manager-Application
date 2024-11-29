@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const db = require('./database/db');
+const db = require('./db/db');
 const routes = require('./routers/allrouters');
 const crypto = require('crypto');
 
