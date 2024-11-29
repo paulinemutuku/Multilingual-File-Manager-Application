@@ -1,20 +1,5 @@
-/**
- * Session controller module.
- * 
- * This module exports several functions for handling session data.
- */
-
 const Session = require('../models/session');
 
-/**
- * Get all sessions.
- * 
- * This function retrieves all sessions from the database.
- * 
- * @param {object} req - The request object.
- * @param {object} res - The response object.
- * @returns {void}
- */
 exports.getAllSessions = async (req, res) => {
   try {
     const sessions = await Session.find();
@@ -32,15 +17,6 @@ exports.getAllSessions = async (req, res) => {
   }
 };
 
-/**
- * Get session by user ID.
- * 
- * This function retrieves a session by its user ID.
- * 
- * @param {object} req - The request object.
- * @param {object} res - The response object.
- * @returns {void}
- */
 exports.getSessionByUserId = async (req, res) => {
   try {
     const userId = req.params.id;

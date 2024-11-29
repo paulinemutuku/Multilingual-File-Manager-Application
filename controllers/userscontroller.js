@@ -1,23 +1,8 @@
-/**
- * User controller module.
- * 
- * This module exports several functions for handling user data.
- */
-
 const User = require('../models/user');
 const passport = require('../config/passport');
 const File = require('../models/files');
 const Session = require('../models/session');
 
-/**
- * Create a new user.
- * 
- * This function creates a new user with the provided username, email, and password.
- * 
- * @param {object} req - The request object.
- * @param {object} res - The response object.
- * @returns {void}
- */
 exports.createUser = async (req, res) => {
   try {
     const { username, email } = req.body;
@@ -50,20 +35,9 @@ exports.createUser = async (req, res) => {
   }
 }
 
-/**
- * Log in a user.
- * 
- * This function logs in a user with the provided username and password.
- * 
- * @param {object} req - The request object.
- * @param {object} res - The response object.
- * @param {function} next - The next middleware function.
- * @returns {void}
- */
 exports.loginUser = async (req, res, next) => {
   const { username, password } = req.body;
 
-  // Validate user input
   if (!username || !password) {
     return res.status(400).json({ message: 'Username and password are required' });
   }
@@ -78,7 +52,6 @@ exports.loginUser = async (req, res, next) => {
       return res.status(401).json({ message: 'Invalid username or password' });
     }
 
-    // Log in the user
     req.logIn(user, async (err) => {
       if (err) {
         return next(err);
@@ -95,15 +68,6 @@ exports.loginUser = async (req, res, next) => {
   })(req, res, next);
 }
 
-/**
- * Log out a user.
- * 
- * This function logs out the current user.
- * 
- * @param {object} req - The request object.
- * @param {object} res - The response object.
- * @returns {void}
- */
 exports.logoutUser = async (req, res) => {
   try {
     if (!req.session.passport) {
@@ -124,15 +88,6 @@ exports.logoutUser = async (req, res) => {
   }
 }
 
-/**
- * Get a user by ID.
- * 
- * This function retrieves a user by its ID.
- * 
- * @param {object} req - The request object.
- * @param {object} res - The response object.
- * @returns {void}
- */
 exports.getUser = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -147,15 +102,6 @@ exports.getUser = async (req, res) => {
   }
 }
 
-/**
- * Update a user.
- * 
- * This function updates a user with the provided data.
- * 
- * @param {object} req - The request object.
- * @param {object} res - The response object.
- * @returns {void}
- */
 exports.updateUser = async (req, res) => {
   try {
     const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -170,15 +116,6 @@ exports.updateUser = async (req, res) => {
   }
 }
 
-/**
- * Delete a user.
- * 
- * This function deletes a user by its ID.
- * 
- * @param {object} req - The request object.
- * @param {object} res - The response object.
- * @returns {void}
- */
 exports.deleteUser = async (req, res) => {
   try {
     if (!req.session.passport) {
@@ -199,15 +136,6 @@ exports.deleteUser = async (req, res) => {
   }
 }
 
-/**
- * Delete all users.
- * 
- * This function deletes all users.
- * 
- * @param {object} req - The request object.
- * @param {object} res - The response object.
- * @returns {void}
- */
 exports.deleteAllUsers = async (req, res) => {
   try {
     const count = await User.countDocuments();
@@ -224,15 +152,6 @@ exports.deleteAllUsers = async (req, res) => {
   }
 }
 
-/**
- * Get the current session.
- * 
- * This function retrieves the current session.
- * 
- * @param {object} req - The request object.
- * @param {object} res - The response object.
- * @returns {void}
- */
 exports.getSession = async (req, res) => {
   try {
     res.json(req.session);
@@ -242,15 +161,6 @@ exports.getSession = async (req, res) => {
   }
 }
 
-/**
- * Get all users.
- * 
- * This function retrieves all users.
- * 
- * @param {object} req - The request object.
- * @param {object} res - The response object.
- * @returns {void}
- */
 exports.getAllUsers = async (req, res) => {
   try {
     const users = await User.find();

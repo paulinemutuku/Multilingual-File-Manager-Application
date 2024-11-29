@@ -1,32 +1,11 @@
-/**
- * File controller module.
- * 
- * This module exports several functions for handling file uploads, retrieval, and deletion.
- */
-
 const multer = require('multer');
 const mongoose = require('mongoose');
 const User = require('../models/user');
 
-/**
- * Multer configuration.
- * 
- * This configuration sets up Multer to store uploaded files in the './uploads/' directory.
- */
 const upload = multer({ dest: './uploads/' });
 
 const File = require('../models/files');
 
-/**
- * Upload a file.
- * 
- * This function handles file uploads. It checks if the user is logged in and if a file is provided.
- * If the file is uploaded successfully, it saves the file to the database and adds it to the user's files.
- * 
- * @param {object} req - The request object.
- * @param {object} res - The response object.
- * @returns {void}
- */
 exports.uploadFile = async (req, res) => {
   try {
     upload.any()(req, res, async (err) => {
@@ -70,15 +49,6 @@ exports.uploadFile = async (req, res) => {
   }
 }
 
-/**
- * Get all files.
- * 
- * This function retrieves all files from the database.
- * 
- * @param {object} req - The request object.
- * @param {object} res - The response object.
- * @returns {void}
- */
 exports.allFiles = async (req, res) => {
   try {
     const files = await File.find();
@@ -89,15 +59,6 @@ exports.allFiles = async (req, res) => {
   }
 }
 
-/**
- * Get user files.
- * 
- * This function retrieves all files owned by the current user.
- * 
- * @param {object} req - The request object.
- * @param {object} res - The response object.
- * @returns {void}
- */
 exports.userFiles = async (req, res) => {
   try {
     if (!req.session.passport) {
@@ -114,15 +75,6 @@ exports.userFiles = async (req, res) => {
   }
 }
 
-/**
- * Delete a file.
- * 
- * This function deletes a file by its ID.
- * 
- * @param {object} req - The request object.
- * @param {object} res - The response object.
- * @returns {void}
- */
 exports.deleteFile = async (req, res) => {
   try {
     if (!req.session.passport) {
@@ -145,15 +97,6 @@ exports.deleteFile = async (req, res) => {
   }
 }
 
-/**
- * Delete all files.
- * 
- * This function deletes all files from the database.
- * 
- * @param {object} req - The request object.
- * @param {object} res - The response object.
- * @returns {void}
- */
 exports.deleteAllFiles = async (req, res) => {
   try {
     const count = await File.countDocuments();
