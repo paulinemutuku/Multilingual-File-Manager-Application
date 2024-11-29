@@ -1,0 +1,24 @@
+{
+  "welcome_message": "Welcome, {{username}}!",
+  "home_page": {
+    "title": "Home Page",
+    "welcome": "Welcome to the File Manager"
+  },
+  "file_manager": {
+    "title": "File Manager",
+    "upload_success": "File uploaded successfully!",
+    "upload_fail": "Failed to upload file.",
+    "upload_file": "Upload File",
+    "create_text": "Create File",
+    "upload_text": "Upload File",
+    "files": "Files",
+    "file_name": "File Name",
+    "file_content": "File Content"
+  },
+  "navbar": {
+    "home" : "🏠 Home",
+    "file_list": "📂 File List",
+    "actions": "📁 Actions",
+    "logout": "🚪 Logout"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "welcome_message": "Murahawe ikaze, {{username}}!",
+  "home_page": {
+    "title": "Urupapuro rw'itangiriro",
+    "welcome": "Murahawe ikaze ku Buyobozi bw'amadosiye"
+  },
+  "file_manager": {
+    "title": "Ubuyobozi bw'amadosiye",
+    "upload_success": "Dosiye yashyizweho neza!",
+    "upload_fail": "Byanze gushyiraho Dosiye.",
+    "upload_file": "Shyiraho Dosiye",
+    "create_text": "Kora Dosiye",
+    "upload_text": "Shyiraho ifishi",
+    "files": "Dosiye",
+    "file_name": "Izina rya Dosiye",
+    "file_content": "Ibikubiye mu Dosiye"
+  },
+  "navbar": {
+    "home" : "🏠 Ahabanza",
+    "file_list": "📂 Urutonde rw'amadosiye",
+    "actions": "📁 Ibikorwa",
+    "logout": "🚪 Sohoka"
+  }
+}

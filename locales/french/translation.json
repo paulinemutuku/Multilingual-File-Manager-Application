@@ -1,0 +1,24 @@
+{
+  "welcome_message": "Bienvenue, {{username}}!",
+  "home_page": {
+    "title": "Page d'accueil",
+    "welcome": "Bienvenue dans le Gestionnaire de Fichiers"
+  },
+  "file_manager": {
+    "title": "Gestionnaire de Fichiers",
+    "upload_success": "Fichier téléchargé avec succès!",
+    "upload_fail": "Échec du téléchargement du fichier.",
+    "upload_file": "Télécharger le Fichier",
+    "create_text": "Créer un Fichier",
+    "upload_text": "Télécharger un Fichier",
+    "files": "Fichiers",
+    "file_name": "Nom du Fichier",
+    "file_content": "Contenu du Fichier"
+  },
+  "navbar": {
+    "home" : "🏠 Accueil",
+    "file_list": "📂 Liste des Fichiers",
+    "actions": "📁 Actions",
+    "logout": "🚪 Déconnexion"
+  }
+}

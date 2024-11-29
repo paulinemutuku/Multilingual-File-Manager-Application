@@ -1,0 +1,24 @@
+{
+  "welcome_message": "Karibu, {{username}}!",
+  "home_page": {
+    "title": "Ukurasa wa Nyumbani",
+    "welcome": "Karibu kwenye Meneja wa Faili"
+  },
+  "file_manager": {
+    "title": "Meneja wa Faili",
+    "upload_success": "Faili limepakiwa kwa mafanikio!",
+    "upload_fail": "Imeshindwa kupakia faili.",
+    "upload_file": "Pakia faili",
+    "create_text": "Tengeneza faili",
+    "upload_text": "Pakia faili",
+    "files": "Faili",
+    "file_name": "Jina la Faili",
+    "file_content": "Yaliyomo kwenye Faili"
+  },
+  "navbar": {
+    "home" : "🏠 Nyumbani",
+    "file_list": "📂 Orodha ya Faili",
+    "actions": "📁 Vitendo",
+    "logout": "🚪 Ondoka"
+  }
+}
