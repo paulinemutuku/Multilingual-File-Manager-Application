@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploaded Files</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <aside class="w-64 bg-green-800 text-white h-screen p-6 fixed">
+            <h2 class="text-2xl font-bold mb-6">Menu</h2>
+            <ul class="space-y-4">
+                <li><a id="nav-home" href="/home" class="hover:text-green-300">🏠 Home</a></li>
+                <li><a id="nav-file-list" href="/files/uploaded" class="hover:text-green-300">📂 File List</a></li>
+                <li><a id="nav-actions" href="/files" class="hover:text-green-300">📁 Actions</a></li>
+                <li><a id="nav-logout" href="/logout" class="hover:text-green-300">🚪 Logout</a></li>
+            </ul>
+            <div id="language-selector" class="mt-6">
+                <h3 class="text-lg font-semibold">Language</h3>
+                <select id="language-dropdown" class="mt-2 w-full p-2 rounded border border-gray-300 text-black">
+                    <option id="selected-language" class="bg-green-800 text-white"></option>
+                    <option value="en">English</option>
+                    <option value="fr">French</option>
+                    <option value="sw">Swahili</option>
+                    <option value="kin">Kinyarwanda</option>
+                </select>        
+            </div>
+        </aside>
+        <main class="ml-80 p-8 flex-1">
+            <h1 class="text-3xl font-bold text-green-800 text-center mb-8" id="page-title">File Manager</h1>
+            <div class="flex justify-between items-center">
+                <button id="create-file-btn" class="file bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700"><p id="create_text">Create New File</p></button>
+                <button id="upload_text" class="file bg-green-600 text-white py-2 px-4 rounded mt-4 hover:bg-green-700">Upload File</button>
+                
+            </div >
+            <div class="flex-col justify-around items-left">
+                <h2 id="files" class="text-xl font-semibold mt-6">Files</h2>
+                <div>
+                    <ul id="file-list" class="mt-4">
+                         <!-- File list items go here -->
+                    </ul>
+                </div>
+            
+            </div>
+            
+        </main>
+    </div>
+    <script src="/scripts/uploaded.js"></script>
+    <script src="/scripts/file-manager.js"></script>
+    <script src="/scripts/translate.js"></script>
+</body>
+</html>
