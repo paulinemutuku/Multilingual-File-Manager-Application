@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: 'ericalivia@2004',
+  password: 'Starlin3.',
   database: 'multilingual_file_manager_app',
   waitForConnections: true,
   connectionLimit: 10,
